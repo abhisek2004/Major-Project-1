@@ -123,8 +123,7 @@ The platform uses **MongoDB Atlas**, a secure cloud-hosted NoSQL database.
 
 | Category             | Tool / Technology     | Reason                                 |
 | -------------------- | --------------------- | -------------------------------------- |
-| Programming Language | Python, JavaScript    | Backend logic & frontend interactivity |
-| Framework            | Flask, React, Next.js | Fast API handling & modern UI          |
+
 | Database             | MongoDB Atlas         | Scalable cloud storage                 |
 | Real-time            | Flask-SocketIO        | Live chat features                     |
 | Scheduling           | APScheduler           | Automated reminders & tasks            |
