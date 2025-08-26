@@ -163,11 +163,11 @@ const Login = () => {
             </motion.button>
 
             {/* Demo Credentials */}
-            {/* <div className="p-4 border bg-slate-800/30 border-slate-700/50 rounded-xl"> */}
-            {/* <p className="mb-2 text-xs text-center text-slate-400">Demo Credentials:</p> */}
-            {/* <p className="text-xs text-center text-slate-300">Email: demo@futuremesh.com</p> */}
-            {/* <p className="text-xs text-center text-slate-300">Password: demo123</p> */}
-            {/* </div> */}
+            <div className="p-4 border bg-slate-800/30 border-slate-700/50 rounded-xl">
+              <p className="mb-2 text-xs text-center text-slate-400">Demo Credentials:</p>
+              <p className="text-xs text-center text-slate-300">Email: demo@futuremesh.com</p>
+              <p className="text-xs text-center text-slate-300">Password: demo123</p>
+            </div>
           </form>
 
           {/* Register Link */}
