@@ -15,7 +15,12 @@ import {
   TrendingUp,
   Clock,
   Award,
-  CheckCircle
+  CheckCircle,
+  FileText,
+  Lightbulb,
+  Calendar,
+  Filter,
+  Search
 } from 'lucide-react';
 
 const AlumniDashboard = () => {
@@ -52,10 +57,10 @@ const AlumniDashboard = () => {
       gradient: 'from-green-500 to-emerald-500'
     },
     {
-      title: 'Impact Score',
-      value: '94.2',
-      icon: Star,
-      change: { value: '+5.2', type: 'increase' as const },
+      title: 'Resources Shared',
+      value: '23',
+      icon: Share2,
+      change: { value: '+5', type: 'increase' as const },
       gradient: 'from-orange-500 to-red-500'
     }
   ];
@@ -125,6 +130,63 @@ const AlumniDashboard = () => {
     }
   ];
 
+  const sharedResources = [
+    {
+      title: 'FAANG Interview Preparation Guide',
+      type: 'PDF',
+      category: 'Interview Prep',
+      downloads: 156,
+      rating: 4.8,
+      date: '2 days ago',
+      icon: FileText
+    },
+    {
+      title: 'Resume Templates for Tech Roles',
+      type: 'DOCX',
+      category: 'Resume',
+      downloads: 89,
+      rating: 4.6,
+      date: '1 week ago',
+      icon: FileText
+    },
+    {
+      title: 'Networking Strategy for Tech Professionals',
+      type: 'PDF',
+      category: 'Networking',
+      downloads: 67,
+      rating: 4.9,
+      date: '2 weeks ago',
+      icon: FileText
+    }
+  ];
+
+  const careerTips = [
+    {
+      title: 'How to Ace Technical Interviews',
+      category: 'Interview',
+      readTime: '5 min read',
+      likes: 234,
+      date: '1 day ago',
+      excerpt: 'Master the art of technical interviews with these proven strategies...'
+    },
+    {
+      title: 'Building Your Personal Brand Online',
+      category: 'Personal Brand',
+      readTime: '8 min read',
+      likes: 189,
+      date: '3 days ago',
+      excerpt: 'Learn how to create a compelling online presence that attracts recruiters...'
+    },
+    {
+      title: 'Negotiating Your First Job Offer',
+      category: 'Negotiation',
+      readTime: '6 min read',
+      likes: 156,
+      date: '1 week ago',
+      excerpt: 'Essential tips for negotiating your first job offer and getting what you deserve...'
+    }
+  ];
+
   const recentAchievements = [
     {
       student: 'Abhisek Panda',
@@ -153,7 +215,7 @@ const AlumniDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-950 flex">
+    <div className="flex min-h-screen bg-slate-950">
       <DashboardSidebar
         items={sidebarItems}
         userRole="alumni"
@@ -161,7 +223,7 @@ const AlumniDashboard = () => {
         userAvatar="https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face"
       />
 
-      <div className="flex-1 overflow-auto">
+      <div className="overflow-auto flex-1">
         <div className="p-8">
           {/* Header */}
           <motion.div
@@ -170,37 +232,48 @@ const AlumniDashboard = () => {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <h1 className="text-3xl font-bold text-white mb-2">Welcome back, Michael! 🌟</h1>
+            <h1 className="mb-2 text-3xl font-bold text-white">Welcome back, Michael! 🌟</h1>
             <p className="text-slate-400">Continue making a difference in students' careers</p>
           </motion.div>
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2 lg:grid-cols-4">
             {statsCards.map((card, index) => (
               <DashboardCard key={card.title} {...card} delay={index * 0.1} />
             ))}
           </div>
 
           {/* Main Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Mentorship Requests */}
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
+            {/* Left Column - Mentorship Requests & Resources */}
             <div className="lg:col-span-2">
+              {/* Mentorship Requests */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 mb-8"
+                className="p-6 mb-8 rounded-2xl border backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
               >
-                <div className="flex items-center justify-between mb-6">
+                <div className="flex justify-between items-center mb-6">
                   <h3 className="text-xl font-semibold text-white">Mentorship Requests</h3>
-                  <button className="text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium">
-                    View All Requests
-                  </button>
+                  <div className="flex items-center space-x-3">
+                    <div className="relative">
+                      <Search className="absolute left-3 top-1/2 w-4 h-4 transform -translate-y-1/2 text-slate-400" />
+                      <input
+                        type="text"
+                        placeholder="Search students..."
+                        className="py-2 pr-4 pl-10 text-sm text-white rounded-lg border bg-slate-800/50 border-slate-700/50 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+                      />
+                    </div>
+                    <button className="text-sm font-medium text-blue-400 transition-colors hover:text-blue-300">
+                      View All Requests
+                    </button>
+                  </div>
                 </div>
 
                 <div className="space-y-6">
                   {mentorshipRequests.map((request, index) => (
-                    <div key={index} className="p-5 bg-slate-800/30 rounded-xl border border-slate-700/30">
+                    <div key={index} className="p-5 rounded-xl border bg-slate-800/30 border-slate-700/30">
                       <div className="flex items-start space-x-4">
                         <img
                           src={request.avatar}
@@ -208,30 +281,30 @@ const AlumniDashboard = () => {
                           className="w-12 h-12 rounded-full"
                         />
                         <div className="flex-1">
-                          <div className="flex items-start justify-between mb-3">
+                          <div className="flex justify-between items-start mb-3">
                             <div>
-                              <h4 className="text-white font-semibold">{request.name}</h4>
-                              <p className="text-slate-400 text-sm">{request.department} • Class of {request.year}</p>
+                              <h4 className="font-semibold text-white">{request.name}</h4>
+                              <p className="text-sm text-slate-400">{request.department} • Class of {request.year}</p>
                             </div>
-                            <span className="text-slate-400 text-sm">{request.time}</span>
+                            <span className="text-sm text-slate-400">{request.time}</span>
                           </div>
 
-                          <p className="text-slate-300 text-sm mb-4 leading-relaxed">{request.request}</p>
+                          <p className="mb-4 text-sm leading-relaxed text-slate-300">{request.request}</p>
 
-                          <div className="flex items-center justify-between">
+                          <div className="flex justify-between items-center">
                             <div className="flex flex-wrap gap-2">
                               {request.skills.map((skill) => (
-                                <span key={skill} className="px-2 py-1 bg-blue-500/20 text-blue-400 rounded-lg text-xs font-medium">
+                                <span key={skill} className="px-2 py-1 text-xs font-medium text-blue-400 rounded-lg bg-blue-500/20">
                                   {skill}
                                 </span>
                               ))}
                             </div>
 
                             <div className="flex space-x-2">
-                              <button className="px-4 py-2 bg-green-500/20 border border-green-500/30 text-green-400 rounded-lg hover:bg-green-500/30 transition-all duration-300 text-sm font-medium">
+                              <button className="px-4 py-2 text-sm font-medium text-green-400 rounded-lg border transition-all duration-300 bg-green-500/20 border-green-500/30 hover:bg-green-500/30">
                                 Accept
                               </button>
-                              <button className="px-4 py-2 bg-slate-700/50 border border-slate-600/50 text-slate-400 rounded-lg hover:bg-slate-600/50 transition-all duration-300 text-sm font-medium">
+                              <button className="px-4 py-2 text-sm font-medium rounded-lg border transition-all duration-300 bg-slate-700/50 border-slate-600/50 text-slate-400 hover:bg-slate-600/50">
                                 Decline
                               </button>
                             </div>
@@ -243,37 +316,106 @@ const AlumniDashboard = () => {
                 </div>
               </motion.div>
 
-              {/* Recent Achievements */}
+              {/* Share Resources */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="bg-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6"
+                className="p-6 mb-8 rounded-2xl border backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
               >
-                <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-xl font-semibold text-white">Student Achievements</h3>
-                  <button className="text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium">
-                    View All
+                <div className="flex justify-between items-center mb-6">
+                  <h3 className="text-xl font-semibold text-white">Share Resources</h3>
+                  <button className="px-4 py-2 text-sm font-medium text-blue-400 rounded-lg border transition-all duration-300 bg-blue-500/20 border-blue-500/30 hover:bg-blue-500/30">
+                    + Add New Resource
+                  </button>
+                </div>
+
+                <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2">
+                  <div className="p-4 rounded-xl border bg-slate-800/30 border-slate-700/30">
+                    <div className="flex items-center mb-3 space-x-3">
+                      <FileText className="w-8 h-8 text-blue-400" />
+                      <div>
+                        <h4 className="font-medium text-white">Upload Document</h4>
+                        <p className="text-sm text-slate-400">Share PDFs, docs, presentations</p>
+                      </div>
+                    </div>
+                    <button className="px-4 py-2 w-full text-sm font-medium text-blue-400 rounded-lg border transition-all duration-300 bg-blue-500/20 border-blue-500/30 hover:bg-blue-500/30">
+                      Choose File
+                    </button>
+                  </div>
+
+                  <div className="p-4 rounded-xl border bg-slate-800/30 border-slate-700/30">
+                    <div className="flex items-center mb-3 space-x-3">
+                      <Share2 className="w-8 h-8 text-green-400" />
+                      <div>
+                        <h4 className="font-medium text-white">Share Link</h4>
+                        <p className="text-sm text-slate-400">Share useful websites, videos</p>
+                      </div>
+                    </div>
+                    <input
+                      type="url"
+                      placeholder="https://..."
+                      className="px-3 py-2 w-full text-sm text-white rounded-lg border bg-slate-800/50 border-slate-700/50 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-green-500/50"
+                    />
+                  </div>
+                </div>
+
+                <div className="space-y-4">
+                  <h4 className="mb-3 font-medium text-white">Recently Shared Resources</h4>
+                  {sharedResources.map((resource, index) => (
+                    <div key={index} className="flex justify-between items-center p-4 rounded-xl bg-slate-800/30">
+                      <div className="flex items-center space-x-3">
+                        <resource.icon className="w-6 h-6 text-blue-400" />
+                        <div>
+                          <h5 className="font-medium text-white">{resource.title}</h5>
+                          <p className="text-sm text-slate-400">{resource.category} • {resource.downloads} downloads</p>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <div className="flex items-center mb-1 space-x-1">
+                          <Star className="w-4 h-4 text-yellow-400 fill-current" />
+                          <span className="text-sm text-white">{resource.rating}</span>
+                        </div>
+                        <p className="text-xs text-slate-400">{resource.date}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
+              {/* Career Tips */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.8 }}
+                className="p-6 rounded-2xl border backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
+              >
+                <div className="flex justify-between items-center mb-6">
+                  <h3 className="text-xl font-semibold text-white">Career Tips & Insights</h3>
+                  <button className="px-4 py-2 text-sm font-medium text-purple-400 rounded-lg border transition-all duration-300 bg-purple-500/20 border-purple-500/30 hover:bg-purple-500/30">
+                    + Write New Tip
                   </button>
                 </div>
 
                 <div className="space-y-4">
-                  {recentAchievements.map((achievement, index) => (
-                    <div key={index} className="p-4 bg-slate-800/30 rounded-xl flex items-start space-x-4">
-                      <div className={`p-2 rounded-lg ₹{achievement.type === 'job_offer' ? 'bg-green-500/20' :
-                          achievement.type === 'completion' ? 'bg-blue-500/20' :
-                            achievement.type === 'skill_improvement' ? 'bg-purple-500/20' :
-                              'bg-orange-500/20'
-                        }`}>
-                        {achievement.type === 'job_offer' && <CheckCircle className="h-4 w-4 text-green-400" />}
-                        {achievement.type === 'completion' && <Award className="h-4 w-4 text-blue-400" />}
-                        {achievement.type === 'skill_improvement' && <TrendingUp className="h-4 w-4 text-purple-400" />}
-                        {achievement.type === 'academic' && <BookOpen className="h-4 w-4 text-orange-400" />}
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="text-white font-medium">{achievement.student}</h4>
-                        <p className="text-slate-300 text-sm">{achievement.achievement}</p>
-                        <p className="text-slate-400 text-xs mt-1">{achievement.date}</p>
+                  {careerTips.map((tip, index) => (
+                    <div key={index} className="p-4 rounded-xl border bg-slate-800/30 border-slate-700/30">
+                      <div className="flex justify-between items-start mb-3">
+                        <div>
+                          <h4 className="mb-2 font-medium text-white">{tip.title}</h4>
+                          <p className="mb-3 text-sm text-slate-300">{tip.excerpt}</p>
+                          <div className="flex items-center space-x-4 text-sm">
+                            <span className="text-slate-400">{tip.category}</span>
+                            <span className="text-slate-400">{tip.readTime}</span>
+                            <span className="text-slate-400">{tip.date}</span>
+                          </div>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <button className="p-2 transition-colors text-slate-400 hover:text-red-400">
+                            <Heart className="w-4 h-4" />
+                          </button>
+                          <span className="text-sm text-slate-400">{tip.likes}</span>
+                        </div>
                       </div>
                     </div>
                   ))}
@@ -281,25 +423,25 @@ const AlumniDashboard = () => {
               </motion.div>
             </div>
 
-            {/* Sidebar */}
+            {/* Right Sidebar */}
             <div>
               {/* Active Chats */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 }}
-                className="bg-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 mb-6"
+                transition={{ duration: 0.6, delay: 1.0 }}
+                className="p-6 mb-6 rounded-2xl border backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
               >
-                <div className="flex items-center justify-between mb-4">
-                  <h3 className="text-lg font-semibold text-white">Active Chats</h3>
-                  <button className="text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium">
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-lg font-semibold text-white">Chat with Students</h3>
+                  <button className="text-sm font-medium text-blue-400 transition-colors hover:text-blue-300">
                     View All
                   </button>
                 </div>
 
                 <div className="space-y-4">
                   {activeChats.map((chat, index) => (
-                    <div key={index} className="flex space-x-3 p-3 bg-slate-800/30 rounded-lg hover:bg-slate-800/50 transition-all duration-300 cursor-pointer">
+                    <div key={index} className="flex p-3 space-x-3 rounded-lg transition-all duration-300 cursor-pointer bg-slate-800/30 hover:bg-slate-800/50">
                       <div className="relative">
                         <img
                           src={chat.avatar}
@@ -307,18 +449,18 @@ const AlumniDashboard = () => {
                           className="w-10 h-10 rounded-full"
                         />
                         {chat.unread > 0 && (
-                          <div className="absolute -top-1 -right-1 w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center">
-                            <span className="text-white text-xs font-bold">{chat.unread}</span>
+                          <div className="flex absolute -top-1 -right-1 justify-center items-center w-5 h-5 bg-blue-500 rounded-full">
+                            <span className="text-xs font-bold text-white">{chat.unread}</span>
                           </div>
                         )}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="flex items-center justify-between mb-1">
-                          <h4 className="text-white font-medium text-sm truncate">{chat.name}</h4>
-                          <span className="text-slate-400 text-xs">{chat.time}</span>
+                        <div className="flex justify-between items-center mb-1">
+                          <h4 className="text-sm font-medium text-white truncate">{chat.name}</h4>
+                          <span className="text-xs text-slate-400">{chat.time}</span>
                         </div>
-                        <p className="text-slate-300 text-xs truncate mb-1">{chat.lastMessage}</p>
-                        <span className={`text-xs px-2 py-1 rounded-full ₹{chat.status === 'preparing for interview' ? 'bg-yellow-500/20 text-yellow-400' :
+                        <p className="mb-1 text-xs truncate text-slate-300">{chat.lastMessage}</p>
+                        <span className={`text-xs px-2 py-1 rounded-full ${chat.status === 'preparing for interview' ? 'bg-yellow-500/20 text-yellow-400' :
                             chat.status === 'job searching' ? 'bg-blue-500/20 text-blue-400' :
                               chat.status === 'networking' ? 'bg-purple-500/20 text-purple-400' :
                                 'bg-green-500/20 text-green-400'
@@ -331,46 +473,83 @@ const AlumniDashboard = () => {
                 </div>
               </motion.div>
 
+              {/* Recent Achievements */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 1.2 }}
+                className="p-6 mb-6 rounded-2xl border backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
+              >
+                <div className="flex justify-between items-center mb-4">
+                  <h3 className="text-lg font-semibold text-white">Student Achievements</h3>
+                  <button className="text-sm font-medium text-blue-400 transition-colors hover:text-blue-300">
+                    View All
+                  </button>
+                </div>
+
+                <div className="space-y-4">
+                  {recentAchievements.map((achievement, index) => (
+                    <div key={index} className="flex items-start p-4 space-x-4 rounded-xl bg-slate-800/30">
+                      <div className={`p-2 rounded-lg ${achievement.type === 'job_offer' ? 'bg-green-500/20' :
+                          achievement.type === 'completion' ? 'bg-blue-500/20' :
+                            achievement.type === 'skill_improvement' ? 'bg-purple-500/20' :
+                              'bg-orange-500/20'
+                        }`}>
+                        {achievement.type === 'job_offer' && <CheckCircle className="w-4 h-4 text-green-400" />}
+                        {achievement.type === 'completion' && <Award className="w-4 h-4 text-blue-400" />}
+                        {achievement.type === 'skill_improvement' && <TrendingUp className="w-4 h-4 text-purple-400" />}
+                        {achievement.type === 'academic' && <BookOpen className="w-4 h-4 text-orange-400" />}
+                      </div>
+                      <div className="flex-1">
+                        <h4 className="font-medium text-white">{achievement.student}</h4>
+                        <p className="text-sm text-slate-300">{achievement.achievement}</p>
+                        <p className="mt-1 text-xs text-slate-400">{achievement.date}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
+
               {/* Impact Summary */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
-                className="bg-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6"
+                transition={{ duration: 0.6, delay: 1.4 }}
+                className="p-6 rounded-2xl border backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
               >
-                <h3 className="text-lg font-semibold text-white mb-4">Your Impact</h3>
+                <h3 className="mb-4 text-lg font-semibold text-white">Your Impact</h3>
 
                 <div className="space-y-4">
                   <div className="text-center">
-                    <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-3">
-                      <Heart className="h-8 w-8 text-white" />
+                    <div className="flex justify-center items-center mx-auto mb-3 w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full">
+                      <Heart className="w-8 h-8 text-white" />
                     </div>
-                    <p className="text-2xl font-bold text-white mb-1">47</p>
-                    <p className="text-slate-400 text-sm">Students helped</p>
+                    <p className="mb-1 text-2xl font-bold text-white">47</p>
+                    <p className="text-sm text-slate-400">Students helped</p>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
                     <div className="text-center">
                       <p className="text-lg font-semibold text-white">23</p>
-                      <p className="text-slate-400 text-xs">Got jobs</p>
+                      <p className="text-xs text-slate-400">Got jobs</p>
                     </div>
                     <div className="text-center">
                       <p className="text-lg font-semibold text-white">38</p>
-                      <p className="text-slate-400 text-xs">Active mentees</p>
+                      <p className="text-xs text-slate-400">Active mentees</p>
                     </div>
                   </div>
 
                   <div className="pt-4 border-t border-slate-700/50">
-                    <div className="flex items-center justify-between mb-2">
-                      <span className="text-slate-400 text-sm">Response Rate</span>
-                      <span className="text-white font-medium">96%</span>
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm text-slate-400">Response Rate</span>
+                      <span className="font-medium text-white">96%</span>
                     </div>
-                    <div className="w-full bg-slate-700 rounded-full h-2">
-                      <div className="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full" style={{ width: '96%' }}></div>
+                    <div className="w-full h-2 rounded-full bg-slate-700">
+                      <div className="h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full" style={{ width: '96%' }}></div>
                     </div>
                   </div>
 
-                  <button className="w-full px-4 py-2 bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 text-blue-400 rounded-lg hover:bg-gradient-to-r hover:from-blue-500/30 hover:to-purple-500/30 transition-all duration-300 text-sm font-medium">
+                  <button className="px-4 py-2 w-full text-sm font-medium text-blue-400 bg-gradient-to-r rounded-lg border transition-all duration-300 from-blue-500/20 to-purple-500/20 border-blue-500/30 hover:bg-gradient-to-r hover:from-blue-500/30 hover:to-purple-500/30">
                     Share Your Story
                   </button>
                 </div>
