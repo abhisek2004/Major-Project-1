@@ -145,6 +145,22 @@ The platform uses **MongoDB Atlas**, a secure cloud-hosted NoSQL database.
 
 ---
 
+![Slide1](https://github.com/user-attachments/assets/fe7c9e9a-711c-4faf-8a7c-d9d44a4eb8d2)
+![Slide2](https://github.com/user-attachments/assets/6dd547ed-80e2-4157-9b9e-513257722ec9)
+![Slide3](https://github.com/user-attachments/assets/b903e2cf-d925-4d3a-9b1d-6e56f9183189)
+![Slide4](https://github.com/user-attachments/assets/91180b7d-3c38-4984-acc6-3d22c1ee2abf)
+![Slide5](https://github.com/user-attachments/assets/c86204af-94dd-42df-91a6-0d50aa29073e)
+![Slide6](https://github.com/user-attachments/assets/24b940c5-df64-46d4-949c-4cb2db1d6576)
+![Slide7](https://github.com/user-attachments/assets/575939dc-56a7-4c22-bd8c-c3002f2691f1)
+![Slide8](https://github.com/user-attachments/assets/b505ecee-3a83-4344-8e9f-90876ff72582)
+![Slide9](https://github.com/user-attachments/assets/aa7f5925-550e-430c-a3ef-b93c908ddb72)
+![Slide10](https://github.com/user-attachments/assets/41565ce2-f8e9-4cfd-b2f7-34da7099aeb0)
+![Slide13](https://github.com/user-attachments/assets/21efd5b8-32e7-4cb8-9353-acfdb0bca6b2)
+![Slide14](https://github.com/user-attachments/assets/2ce473e9-a0d2-43c4-990d-fa29ecfd34f2)
+![Slide15](https://github.com/user-attachments/assets/4664b2d1-1bdc-4ad4-971f-282c35366ef8)
+
+---
+
 ## **📌 Future Enhancements**
 
 * **AI Chatbot Integration** (Dialogflow / OpenAI API) for career guidance.
