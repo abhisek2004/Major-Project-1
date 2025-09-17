@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Zap, Mail, Lock, Eye, EyeOff, ArrowRight, Shield, Users, Target } from 'lucide-react';
 
@@ -8,6 +8,8 @@ const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [selectedRole, setSelectedRole] = useState('student');
+  const [error, setError] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const roles = [
     { id: 'student', label: 'Student', icon: Target, description: 'Apply for jobs and connect with mentors' },
@@ -18,21 +20,32 @@ const Login = () => {
     { id: 'super-admin', label: 'Super Admin', icon: Shield, description: 'Full platform control' }
   ];
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Redirect based on role selection
-    const roleRoutes = {
-      'student': '/student',
-      'alumni': '/alumni',
-      'hr': '/hr',
-      'hod': '/hod',
-      'admin': '/admin',
-      'super-admin': '/super-admin'
-    };
-    window.location.href = roleRoutes[selectedRole as keyof typeof roleRoutes];
-  };
+    setError(null);
 
-  return (
+    try {
+      console.log("selectedRoles", selectedRole)
+      const response = await fetch('http://localhost:5000/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password, role: selectedRole }),
+      });
+      const data = await response.json();
+      console.log("data", data);
+      if (response.ok) {
+        localStorage.setItem('token', data.token);
+        navigate(data.redirect);
+      } else {
+        setError(data.message || 'Login failed');
+      }
+    } catch (error) {
+      setError('Server error during login');
+      console.error('Login error:', error);
+    }
+  };
+  
+    return (
     <div className="flex items-center justify-center min-h-screen p-4 bg-slate-950">
       <div className="absolute inset-0">
         <div className="absolute rounded-full top-20 left-10 w-96 h-96 bg-blue-500/5 blur-3xl animate-pulse"></div>
@@ -73,7 +86,7 @@ const Login = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setSelectedRole(role.id)}
-                  className={`p-3 rounded-xl border transition-all duration-300 text-left ₹{selectedRole === role.id
+                  className={`p-3 rounded-xl border transition-all duration-300 text-left ${selectedRole === role.id
                       ? 'border-blue-500 bg-blue-500/10 text-blue-400'
                       : 'border-slate-700 bg-slate-800/30 text-slate-400 hover:border-slate-600'
                     }`}

@@ -34,7 +34,7 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
           <p className="text-slate-400 text-sm font-medium">{title}</p>
           <p className="text-2xl lg:text-3xl font-bold text-white">{value}</p>
           {change && (
-            <div className={`flex items-center space-x-1 text-sm ₹{
+            <div className={`flex items-center space-x-1 text-sm ${
               change.type === 'increase' ? 'text-green-400' : 
               change.type === 'decrease' ? 'text-red-400' : 
               'text-slate-400'
@@ -45,7 +45,7 @@ const DashboardCard: React.FC<DashboardCardProps> = ({
           )}
         </div>
 
-        <div className={`p-3 rounded-xl bg-gradient-to-br ₹{gradient} bg-opacity-20 group-hover:scale-110 transition-transform duration-300`}>
+        <div className={`p-3 rounded-xl bg-gradient-to-br ${gradient} bg-opacity-20 group-hover:scale-110 transition-transform duration-300`}>
           <Icon className="h-6 w-6 text-white" />
         </div>
       </div>

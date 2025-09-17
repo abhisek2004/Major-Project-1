@@ -124,7 +124,7 @@ const SuperAdminDashboard = () => {
                 <div className="space-y-4">
                   {recentActivity.map((activity, index) => (
                     <div key={index} className="flex items-center p-4 space-x-4 rounded-lg bg-slate-800/30">
-                      <div className={`w-2 h-2 rounded-full ₹{activity.type === 'user' ? 'bg-blue-400' :
+                      <div className={`w-2 h-2 rounded-full ${activity.type === 'user' ? 'bg-blue-400' :
                           activity.type === 'job' ? 'bg-green-400' :
                             activity.type === 'data' ? 'bg-purple-400' :
                               activity.type === 'system' ? 'bg-yellow-400' :

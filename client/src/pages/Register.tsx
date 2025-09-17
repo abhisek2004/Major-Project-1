@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Zap, Mail, Lock, Eye, EyeOff, User, ArrowRight, Shield, Users, Target, Building2 } from 'lucide-react';
 
 const Register = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -22,6 +23,7 @@ const Register = () => {
     { id: 'alumni', label: 'Alumni', icon: Users, description: 'Want to mentor students' },
     { id: 'hr', label: 'HR/Recruiter', icon: Building2, description: 'Hiring for your company' }
   ];
+  const navigate = useNavigate();
 
   const handleInputChange = (e: React.TargetEvent<HTMLInputElement | HTMLSelectElement>) => {
     setFormData({
@@ -30,13 +32,27 @@ const Register = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle registration logic here
-    console.log('Registration data:', formData);
+    setError(null);
+    try {
+      const response = await fetch('http://localhost:5000/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      if (response.ok) {
+        navigate(data.redirect);
+      } else {
+        setError(data.message || 'Registration failed');
+      }
+    } catch (error) {
+      setError('Server error during registration');
+      console.error('Registration error:', error);
+    }
   };
-
-  return (
+    return (
     <div className="min-h-screen bg-slate-950 flex items-center justify-center p-4">
       <div className="absolute inset-0">
         <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500/5 rounded-full blur-3xl animate-pulse"></div>
@@ -118,7 +134,7 @@ const Register = () => {
                     key={role.id}
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
-                    className={`p-4 rounded-xl border cursor-pointer transition-all duration-300 ₹{
+                    className={`p-4 rounded-xl border cursor-pointer transition-all duration-300 ${
                       formData.role === role.id
                         ? 'border-blue-500 bg-blue-500/10'
                         : 'border-slate-700 bg-slate-800/30 hover:border-slate-600'
@@ -133,9 +149,9 @@ const Register = () => {
                       className="sr-only"
                     />
                     <div className="flex items-center space-x-3">
-                      <role.icon className={`h-5 w-5 ₹{formData.role === role.id ? 'text-blue-400' : 'text-slate-400'}`} />
+                      <role.icon className={`h-5 w-5 ${formData.role === role.id ? 'text-blue-400' : 'text-slate-400'}`} />
                       <div>
-                        <div className={`font-medium ₹{formData.role === role.id ? 'text-blue-400' : 'text-white'}`}>
+                        <div className={`font-medium ${formData.role === role.id ? 'text-blue-400' : 'text-white'}`}>
                           {role.label}
                         </div>
                         <div className="text-sm text-slate-400">{role.description}</div>

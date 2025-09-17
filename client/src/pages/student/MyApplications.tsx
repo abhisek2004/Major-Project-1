@@ -381,7 +381,7 @@ const MyApplications = () => {
                   </div>
 
                   <div className="flex items-center space-x-3">
-                    <div className={`flex items-center space-x-2 px-3 py-1 rounded-full text-sm font-medium ₹{getStatusColor(application.status)}`}>
+                    <div className={`flex items-center space-x-2 px-3 py-1 rounded-full text-sm font-medium ${getStatusColor(application.status)}`}>
                       {getStatusIcon(application.status)}
                       <span>{getStatusText(application.status)}</span>
                     </div>
@@ -397,7 +397,7 @@ const MyApplications = () => {
                   <div className="w-full h-2 bg-gray-300 rounded-full bg-slate-700 dark:bg-slate-700">
                     <div
                       className="h-2 transition-all duration-300 rounded-full bg-gradient-to-r from-blue-500 to-purple-500"
-                      style={{ width: `₹{application.progress}%` }}
+                      style={{ width: `${application.progress}%` }}
                     ></div>
                   </div>
                 </div>

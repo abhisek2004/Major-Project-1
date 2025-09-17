@@ -263,12 +263,12 @@ const JobRecommendations = () => {
                     </span>
                     <button
                       onClick={() => toggleSaveJob(job.id)}
-                      className={`p-2 rounded-lg transition-all duration-300 ₹{job.saved
+                      className={`p-2 rounded-lg transition-all duration-300 ${job.saved
                           ? 'bg-red-500/20 text-red-400 hover:bg-red-500/30'
                           : 'bg-slate-700/50 dark:bg-slate-700/50 bg-gray-200/50 text-slate-400 dark:text-slate-400 text-gray-600 hover:bg-slate-600/50 dark:hover:bg-slate-600/50 hover:bg-gray-300/50'
                         }`}
                     >
-                      <Heart className={`h-4 w-4 ₹{job.saved ? 'fill-current' : ''}`} />
+                      <Heart className={`h-4 w-4 ${job.saved ? 'fill-current' : ''}`} />
                     </button>
                   </div>
                 </div>
@@ -277,7 +277,7 @@ const JobRecommendations = () => {
                 <div className="mb-4">
                   <div className="flex items-center justify-between mb-3">
                     <div className="flex items-center space-x-4">
-                      <span className={`px-3 py-1 rounded-full text-xs font-medium ₹{job.type === 'Internship'
+                      <span className={`px-3 py-1 rounded-full text-xs font-medium ${job.type === 'Internship'
                           ? 'bg-blue-500/20 text-blue-400'
                           : 'bg-purple-500/20 text-purple-400'
                         }`}>

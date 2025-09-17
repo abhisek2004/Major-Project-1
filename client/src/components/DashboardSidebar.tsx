@@ -55,14 +55,14 @@ const DashboardSidebar: React.FC<DashboardSidebarProps> = ({ items, userRole, us
             >
               <Link
                 to={item.path}
-                className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-300 group ₹{
+                className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-300 group ${
                   isActive
                     ? 'bg-blue-500/20 text-blue-400 border border-blue-500/30'
                     : 'text-slate-400 dark:text-slate-400 text-gray-600 hover:text-white dark:hover:text-white hover:text-gray-900 hover:bg-slate-800/50 dark:hover:bg-slate-800/50 hover:bg-gray-100/50'
                 }`}
               >
                 <div className="flex items-center space-x-3">
-                  <item.icon className={`h-5 w-5 ₹{isActive ? 'text-blue-400' : 'text-slate-400 dark:text-slate-400 text-gray-600 group-hover:text-white dark:group-hover:text-white group-hover:text-gray-900'} transition-colors duration-300`} />
+                  <item.icon className={`h-5 w-5 ${isActive ? 'text-blue-400' : 'text-slate-400 dark:text-slate-400 text-gray-600 group-hover:text-white dark:group-hover:text-white group-hover:text-gray-900'} transition-colors duration-300`} />
                   <span className="font-medium">{item.label}</span>
                 </div>
                 {item.badge && (

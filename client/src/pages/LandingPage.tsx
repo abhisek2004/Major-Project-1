@@ -204,7 +204,7 @@ const LandingPage = () => {
                 <div className="absolute inset-0 transition-opacity duration-300 opacity-0 bg-gradient-to-br from-slate-800/50 to-slate-900/50 rounded-3xl group-hover:opacity-100"></div>
 
                 <div className="relative z-10">
-                  <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ₹{feature.color} bg-opacity-20 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br ${feature.color} bg-opacity-20 rounded-2xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
                     <feature.icon className="w-8 h-8 text-white" />
                   </div>
 

@@ -259,7 +259,7 @@ const HRDashboard = () => {
                         <div>
                           <div className="flex items-center space-x-3 mb-2">
                             <h4 className="text-white font-semibold text-lg">{job.title}</h4>
-                            <span className={`px-3 py-1 rounded-full text-xs font-medium ₹{job.status === 'active' ? 'bg-green-500/20 text-green-400' :
+                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${job.status === 'active' ? 'bg-green-500/20 text-green-400' :
                               job.status === 'review' ? 'bg-orange-500/20 text-orange-400' :
                                 'bg-slate-500/20 text-slate-400'
                               }`}>
@@ -362,7 +362,7 @@ const HRDashboard = () => {
                                 <p className="text-slate-400 text-xs">CGPA</p>
                                 <p className="text-white font-medium">{candidate.cgpa}</p>
                               </div>
-                              <span className={`px-3 py-1 rounded-full text-xs font-medium ₹{candidate.status === 'interview_scheduled' ? 'bg-blue-500/20 text-blue-400' :
+                              <span className={`px-3 py-1 rounded-full text-xs font-medium ${candidate.status === 'interview_scheduled' ? 'bg-blue-500/20 text-blue-400' :
                                 candidate.status === 'shortlisted' ? 'bg-green-500/20 text-green-400' :
                                   candidate.status === 'offer_extended' ? 'bg-purple-500/20 text-purple-400' :
                                     'bg-orange-500/20 text-orange-400'

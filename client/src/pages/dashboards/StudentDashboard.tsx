@@ -222,7 +222,7 @@ const StudentDashboard = () => {
                             </div>
                           </div>
                           <div className="flex items-center justify-between mt-3">
-                            <span className={`px-3 py-1 rounded-full text-xs font-medium ₹{job.type === 'Internship'
+                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${job.type === 'Internship'
                               ? 'bg-blue-500/20 text-blue-400'
                               : 'bg-purple-500/20 text-purple-400'
                               }`}>
@@ -266,7 +266,7 @@ const StudentDashboard = () => {
                           {application.type === 'review' && <Clock className="w-4 h-4 text-yellow-400" />}
                           {application.type === 'submitted' && <AlertCircle className="w-4 h-4 text-blue-400" />}
                           {application.type === 'offer' && <CheckCircle className="w-4 h-4 text-green-400" />}
-                          <span className={`text-sm font-medium ₹{application.type === 'interview' ? 'text-green-400' :
+                          <span className={`text-sm font-medium ${application.type === 'interview' ? 'text-green-400' :
                             application.type === 'review' ? 'text-yellow-400' :
                               application.type === 'submitted' ? 'text-blue-400' :
                                 'text-green-400'

@@ -157,7 +157,7 @@ const Footer = () => {
                 href={social.href}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className={`text-slate-400 ₹{social.color} transition-colors duration-300`}
+                className={`text-slate-400 ${social.color} transition-colors duration-300`}
               >
                 <social.icon className="w-5 h-5" />
               </motion.a>
