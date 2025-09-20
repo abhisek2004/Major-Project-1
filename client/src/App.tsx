@@ -25,6 +25,9 @@ import GlobalReports from './pages/super-admin/GlobalReports';
 import SuperAdminNotifications from './pages/super-admin/Notifications';
 import SuperAdminSettings from './pages/super-admin/Settings';
 
+// Alumni Pages
+import AlumniMentorshipChat from './pages/dashboards/alumni/AlumniMentorshipChat';
+
 function App() {
   return (
     <Router>
@@ -50,6 +53,7 @@ function App() {
           <Route path="/student/notifications" element={<StudentNotifications />} />
           <Route path="/student/settings" element={<StudentSettings />} />
           <Route path="/hr" element={<HRDashboard />} />
+          <Route path="/alumni/mentorship" element={<AlumniMentorshipChat />} />
         </Routes>
       </div>
     </Router>
