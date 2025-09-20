@@ -108,7 +108,7 @@ const HRDashboard = () => {
 
   const topCandidates = [
     {
-      name: 'Sarah Chen',
+      name: 'Ritu Verma',
       university: 'GIET University',
       degree: 'MS Computer Science',
       cgpa: 9.1,
@@ -120,7 +120,7 @@ const HRDashboard = () => {
       avatar: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop&crop=face'
     },
     {
-      name: 'Michael Rodriguez',
+      name: 'Prakash Reddy',
       university: 'MIT',
       degree: 'BS Electrical Engineering',
       cgpa: 8.9,
@@ -132,7 +132,7 @@ const HRDashboard = () => {
       avatar: 'https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop&crop=face'
     },
     {
-      name: 'Emily Johnson',
+      name: 'Ananya Das',
       university: 'Harvard Business School',
       degree: 'MBA',
       cgpa: 9.3,
@@ -144,7 +144,7 @@ const HRDashboard = () => {
       avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop&crop=face'
     },
     {
-      name: 'David Chen',
+      name: 'David',
       university: 'UC Berkeley',
       degree: 'PhD Data Science',
       cgpa: 9.0,
@@ -159,7 +159,7 @@ const HRDashboard = () => {
 
   const upcomingInterviews = [
     {
-      candidate: 'Sarah Chen',
+      candidate: 'Ritu Verma',
       position: 'Senior Software Engineer',
       date: '2024-01-20',
       time: '2:00 PM',
@@ -195,11 +195,11 @@ const HRDashboard = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-slate-950 flex">
+    <div className="flex min-h-screen bg-slate-950">
       <DashboardSidebar
         items={sidebarItems}
         userRole="hr"
-        userName="Jessica Miller"
+        userName="Pooja Singh"
         userAvatar="https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face"
       />
 
@@ -214,39 +214,39 @@ const HRDashboard = () => {
           >
             <div className="flex items-center justify-between">
               <div>
-                <h1 className="text-3xl font-bold text-white mb-2">HR Dashboard - Microsoft</h1>
+                <h1 className="mb-2 text-3xl font-bold text-white">HR Dashboard - Microsoft</h1>
                 <p className="text-slate-400">Manage your hiring pipeline and track recruitment metrics</p>
               </div>
-              <button className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-xl font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-blue-500/25">
+              <button className="px-6 py-3 font-medium text-white transition-all duration-300 transform shadow-lg bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 rounded-xl hover:scale-105 hover:shadow-blue-500/25">
                 Post New Job
               </button>
             </div>
           </motion.div>
 
           {/* Stats Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div className="grid grid-cols-1 gap-6 mb-8 md:grid-cols-2 lg:grid-cols-4">
             {statsCards.map((card, index) => (
               <DashboardCard key={card.title} {...card} delay={index * 0.1} />
             ))}
           </div>
 
           {/* Main Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             {/* Job Posts Performance */}
             <div className="lg:col-span-2">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="bg-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 mb-8"
+                className="p-6 mb-8 border bg-slate-900/50 backdrop-blur-xl border-slate-700/50 rounded-2xl"
               >
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-semibold text-white">Job Posts Performance</h3>
                   <div className="flex space-x-2">
-                    <button className="p-2 bg-slate-800/50 border border-slate-700/50 text-slate-400 rounded-lg hover:bg-slate-700/50 transition-all duration-300">
-                      <Filter className="h-4 w-4" />
+                    <button className="p-2 transition-all duration-300 border rounded-lg bg-slate-800/50 border-slate-700/50 text-slate-400 hover:bg-slate-700/50">
+                      <Filter className="w-4 h-4" />
                     </button>
-                    <button className="text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium">
+                    <button className="text-sm font-medium text-blue-400 transition-colors hover:text-blue-300">
                       View All Jobs
                     </button>
                   </div>
@@ -254,11 +254,11 @@ const HRDashboard = () => {
 
                 <div className="space-y-6">
                   {jobPosts.map((job) => (
-                    <div key={job.id} className="p-5 bg-slate-800/30 rounded-xl border border-slate-700/30">
+                    <div key={job.id} className="p-5 border bg-slate-800/30 rounded-xl border-slate-700/30">
                       <div className="flex items-start justify-between mb-4">
                         <div>
-                          <div className="flex items-center space-x-3 mb-2">
-                            <h4 className="text-white font-semibold text-lg">{job.title}</h4>
+                          <div className="flex items-center mb-2 space-x-3">
+                            <h4 className="text-lg font-semibold text-white">{job.title}</h4>
                             <span className={`px-3 py-1 rounded-full text-xs font-medium ${job.status === 'active' ? 'bg-green-500/20 text-green-400' :
                               job.status === 'review' ? 'bg-orange-500/20 text-orange-400' :
                                 'bg-slate-500/20 text-slate-400'
@@ -266,48 +266,48 @@ const HRDashboard = () => {
                               {job.status}
                             </span>
                           </div>
-                          <div className="flex items-center space-x-4 text-slate-400 text-sm mb-2">
+                          <div className="flex items-center mb-2 space-x-4 text-sm text-slate-400">
                             <span>{job.type}</span>
                             <span>•</span>
                             <div className="flex items-center space-x-1">
-                              <MapPin className="h-3 w-3" />
+                              <MapPin className="w-3 h-3" />
                               <span>{job.location}</span>
                             </div>
                             <span>•</span>
-                            <span className="text-green-400 font-medium">{job.salary}</span>
+                            <span className="font-medium text-green-400">{job.salary}</span>
                           </div>
-                          <p className="text-slate-500 text-sm">Posted: {new Date(job.postedDate).toLocaleDateString()} • Deadline: {new Date(job.deadline).toLocaleDateString()}</p>
+                          <p className="text-sm text-slate-500">Posted: {new Date(job.postedDate).toLocaleDateString()} • Deadline: {new Date(job.deadline).toLocaleDateString()}</p>
                         </div>
                       </div>
 
                       <div className="grid grid-cols-4 gap-4 mb-4">
-                        <div className="bg-slate-700/30 p-3 rounded-lg text-center">
+                        <div className="p-3 text-center rounded-lg bg-slate-700/30">
                           <p className="text-2xl font-bold text-white">{job.applications}</p>
-                          <p className="text-slate-400 text-xs">Applications</p>
+                          <p className="text-xs text-slate-400">Applications</p>
                         </div>
-                        <div className="bg-slate-700/30 p-3 rounded-lg text-center">
+                        <div className="p-3 text-center rounded-lg bg-slate-700/30">
                           <p className="text-2xl font-bold text-blue-400">{job.shortlisted}</p>
-                          <p className="text-slate-400 text-xs">Shortlisted</p>
+                          <p className="text-xs text-slate-400">Shortlisted</p>
                         </div>
-                        <div className="bg-slate-700/30 p-3 rounded-lg text-center">
+                        <div className="p-3 text-center rounded-lg bg-slate-700/30">
                           <p className="text-2xl font-bold text-purple-400">{job.interviewed}</p>
-                          <p className="text-slate-400 text-xs">Interviewed</p>
+                          <p className="text-xs text-slate-400">Interviewed</p>
                         </div>
-                        <div className="bg-slate-700/30 p-3 rounded-lg text-center">
+                        <div className="p-3 text-center rounded-lg bg-slate-700/30">
                           <p className="text-2xl font-bold text-green-400">{Math.floor(job.interviewed * 0.6)}</p>
-                          <p className="text-slate-400 text-xs">Offers</p>
+                          <p className="text-xs text-slate-400">Offers</p>
                         </div>
                       </div>
 
                       <div className="flex items-center justify-between">
-                        <span className="text-slate-400 text-sm">
+                        <span className="text-sm text-slate-400">
                           Target: {job.department} Department
                         </span>
                         <div className="flex space-x-2">
-                          <button className="px-4 py-2 bg-blue-500/20 border border-blue-500/30 text-blue-400 rounded-lg hover:bg-blue-500/30 transition-all duration-300 text-sm font-medium">
+                          <button className="px-4 py-2 text-sm font-medium text-blue-400 transition-all duration-300 border rounded-lg bg-blue-500/20 border-blue-500/30 hover:bg-blue-500/30">
                             View Applications
                           </button>
-                          <button className="px-4 py-2 bg-purple-500/20 border border-purple-500/30 text-purple-400 rounded-lg hover:bg-purple-500/30 transition-all duration-300 text-sm font-medium">
+                          <button className="px-4 py-2 text-sm font-medium text-purple-400 transition-all duration-300 border rounded-lg bg-purple-500/20 border-purple-500/30 hover:bg-purple-500/30">
                             Schedule Interviews
                           </button>
                         </div>
@@ -322,20 +322,20 @@ const HRDashboard = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="bg-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6"
+                className="p-6 border bg-slate-900/50 backdrop-blur-xl border-slate-700/50 rounded-2xl"
               >
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-semibold text-white">Top Candidates</h3>
                   <div className="flex space-x-2">
                     <div className="relative">
-                      <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-slate-400" />
+                      <Search className="absolute w-4 h-4 transform -translate-y-1/2 left-3 top-1/2 text-slate-400" />
                       <input
                         type="text"
                         placeholder="Search candidates..."
-                        className="pl-10 pr-4 py-2 bg-slate-800/50 border border-slate-700/50 rounded-lg text-slate-300 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent text-sm"
+                        className="py-2 pl-10 pr-4 text-sm border rounded-lg bg-slate-800/50 border-slate-700/50 text-slate-300 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       />
                     </div>
-                    <button className="text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium">
+                    <button className="text-sm font-medium text-blue-400 transition-colors hover:text-blue-300">
                       View All
                     </button>
                   </div>
@@ -353,14 +353,14 @@ const HRDashboard = () => {
                         <div className="flex-1">
                           <div className="flex items-start justify-between mb-2">
                             <div>
-                              <h4 className="text-white font-semibold">{candidate.name}</h4>
-                              <p className="text-slate-400 text-sm">{candidate.degree} • {candidate.university}</p>
-                              <p className="text-slate-500 text-xs">Applying for: {candidate.position}</p>
+                              <h4 className="font-semibold text-white">{candidate.name}</h4>
+                              <p className="text-sm text-slate-400">{candidate.degree} • {candidate.university}</p>
+                              <p className="text-xs text-slate-500">Applying for: {candidate.position}</p>
                             </div>
                             <div className="flex items-center space-x-2">
                               <div className="text-right">
-                                <p className="text-slate-400 text-xs">CGPA</p>
-                                <p className="text-white font-medium">{candidate.cgpa}</p>
+                                <p className="text-xs text-slate-400">CGPA</p>
+                                <p className="font-medium text-white">{candidate.cgpa}</p>
                               </div>
                               <span className={`px-3 py-1 rounded-full text-xs font-medium ${candidate.status === 'interview_scheduled' ? 'bg-blue-500/20 text-blue-400' :
                                 candidate.status === 'shortlisted' ? 'bg-green-500/20 text-green-400' :
@@ -374,33 +374,33 @@ const HRDashboard = () => {
 
                           <div className="flex flex-wrap gap-2 mb-3">
                             {candidate.skills.slice(0, 4).map((skill) => (
-                              <span key={skill} className="px-2 py-1 bg-blue-500/20 text-blue-400 rounded-lg text-xs">
+                              <span key={skill} className="px-2 py-1 text-xs text-blue-400 rounded-lg bg-blue-500/20">
                                 {skill}
                               </span>
                             ))}
                             {candidate.skills.length > 4 && (
-                              <span className="px-2 py-1 bg-slate-700/50 text-slate-400 rounded-lg text-xs">
+                              <span className="px-2 py-1 text-xs rounded-lg bg-slate-700/50 text-slate-400">
                                 +{candidate.skills.length - 4} more
                               </span>
                             )}
                           </div>
 
                           {candidate.interviewDate && (
-                            <div className="flex items-center space-x-2 mb-2">
-                              <Calendar className="h-4 w-4 text-blue-400" />
-                              <span className="text-blue-400 text-sm">
+                            <div className="flex items-center mb-2 space-x-2">
+                              <Calendar className="w-4 h-4 text-blue-400" />
+                              <span className="text-sm text-blue-400">
                                 Interview: {new Date(candidate.interviewDate).toLocaleDateString()}
                               </span>
                             </div>
                           )}
 
                           <div className="flex items-center justify-between">
-                            <span className="text-slate-400 text-sm">Experience: {candidate.experience}</span>
+                            <span className="text-sm text-slate-400">Experience: {candidate.experience}</span>
                             <div className="flex space-x-2">
-                              <button className="px-3 py-1 bg-green-500/20 border border-green-500/30 text-green-400 rounded-lg hover:bg-green-500/30 transition-all duration-300 text-sm">
+                              <button className="px-3 py-1 text-sm text-green-400 transition-all duration-300 border rounded-lg bg-green-500/20 border-green-500/30 hover:bg-green-500/30">
                                 Schedule Interview
                               </button>
-                              <button className="px-3 py-1 bg-blue-500/20 border border-blue-500/30 text-blue-400 rounded-lg hover:bg-blue-500/30 transition-all duration-300 text-sm">
+                              <button className="px-3 py-1 text-sm text-blue-400 transition-all duration-300 border rounded-lg bg-blue-500/20 border-blue-500/30 hover:bg-blue-500/30">
                                 View Profile
                               </button>
                             </div>
@@ -420,18 +420,18 @@ const HRDashboard = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="bg-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 mb-6"
+                className="p-6 mb-6 border bg-slate-900/50 backdrop-blur-xl border-slate-700/50 rounded-2xl"
               >
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-semibold text-white">Upcoming Interviews</h3>
-                  <button className="text-blue-400 hover:text-blue-300 transition-colors text-sm font-medium">
+                  <button className="text-sm font-medium text-blue-400 transition-colors hover:text-blue-300">
                     View Calendar
                   </button>
                 </div>
 
                 <div className="space-y-4">
                   {upcomingInterviews.map((interview, index) => (
-                    <div key={index} className="p-4 bg-slate-800/30 rounded-lg">
+                    <div key={index} className="p-4 rounded-lg bg-slate-800/30">
                       <div className="flex items-start space-x-3">
                         <img
                           src={interview.avatar}
@@ -439,23 +439,23 @@ const HRDashboard = () => {
                           className="w-10 h-10 rounded-full"
                         />
                         <div className="flex-1">
-                          <h4 className="text-white font-medium text-sm">{interview.candidate}</h4>
-                          <p className="text-slate-400 text-xs">{interview.position}</p>
-                          <div className="flex items-center space-x-4 mt-2 text-xs">
+                          <h4 className="text-sm font-medium text-white">{interview.candidate}</h4>
+                          <p className="text-xs text-slate-400">{interview.position}</p>
+                          <div className="flex items-center mt-2 space-x-4 text-xs">
                             <div className="flex items-center space-x-1">
-                              <Calendar className="h-3 w-3 text-blue-400" />
+                              <Calendar className="w-3 h-3 text-blue-400" />
                               <span className="text-blue-400">{new Date(interview.date).toLocaleDateString()}</span>
                             </div>
                             <div className="flex items-center space-x-1">
-                              <Clock className="h-3 w-3 text-slate-400" />
+                              <Clock className="w-3 h-3 text-slate-400" />
                               <span className="text-slate-400">{interview.time}</span>
                             </div>
                           </div>
                           <div className="flex items-center justify-between mt-2">
-                            <span className="text-xs px-2 py-1 bg-purple-500/20 text-purple-400 rounded-lg">
+                            <span className="px-2 py-1 text-xs text-purple-400 rounded-lg bg-purple-500/20">
                               {interview.type}
                             </span>
-                            <span className="text-slate-400 text-xs">with {interview.interviewer}</span>
+                            <span className="text-xs text-slate-400">with {interview.interviewer}</span>
                           </div>
                         </div>
                       </div>
@@ -469,38 +469,38 @@ const HRDashboard = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.0 }}
-                className="bg-slate-900/50 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6"
+                className="p-6 border bg-slate-900/50 backdrop-blur-xl border-slate-700/50 rounded-2xl"
               >
-                <h3 className="text-lg font-semibold text-white mb-4">Hiring Metrics</h3>
+                <h3 className="mb-4 text-lg font-semibold text-white">Hiring Metrics</h3>
 
                 <div className="space-y-4">
                   {hiringMetrics.map((metric, index) => (
                     <div key={index} className="flex items-center justify-between">
-                      <span className="text-slate-400 text-sm">{metric.label}</span>
+                      <span className="text-sm text-slate-400">{metric.label}</span>
                       <div className="text-right">
-                        <span className="text-white font-medium">{metric.value}</span>
-                        <p className="text-green-400 text-xs">{metric.trend}</p>
+                        <span className="font-medium text-white">{metric.value}</span>
+                        <p className="text-xs text-green-400">{metric.trend}</p>
                       </div>
                     </div>
                   ))}
                 </div>
 
-                <div className="mt-6 p-4 bg-gradient-to-r from-green-500/10 to-emerald-500/10 border border-green-500/20 rounded-lg">
-                  <div className="flex items-center space-x-2 mb-2">
-                    <Star className="h-4 w-4 text-green-400" />
-                    <span className="text-green-400 font-medium text-sm">Hiring Goal Progress</span>
+                <div className="p-4 mt-6 border rounded-lg bg-gradient-to-r from-green-500/10 to-emerald-500/10 border-green-500/20">
+                  <div className="flex items-center mb-2 space-x-2">
+                    <Star className="w-4 h-4 text-green-400" />
+                    <span className="text-sm font-medium text-green-400">Hiring Goal Progress</span>
                   </div>
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-slate-400 text-sm">Q1 2024 Target</span>
-                    <span className="text-white font-medium">78 / 100 hires</span>
+                    <span className="text-sm text-slate-400">Q1 2024 Target</span>
+                    <span className="font-medium text-white">78 / 100 hires</span>
                   </div>
-                  <div className="w-full bg-slate-700 rounded-full h-2">
-                    <div className="bg-gradient-to-r from-green-500 to-emerald-500 h-2 rounded-full" style={{ width: '78%' }}></div>
+                  <div className="w-full h-2 rounded-full bg-slate-700">
+                    <div className="h-2 rounded-full bg-gradient-to-r from-green-500 to-emerald-500" style={{ width: '78%' }}></div>
                   </div>
-                  <p className="text-green-400 text-xs mt-2">22 more hires to reach target</p>
+                  <p className="mt-2 text-xs text-green-400">22 more hires to reach target</p>
                 </div>
 
-                <button className="w-full mt-4 px-4 py-2 bg-blue-500/20 border border-blue-500/30 text-blue-400 rounded-lg hover:bg-blue-500/30 transition-all duration-300 text-sm font-medium">
+                <button className="w-full px-4 py-2 mt-4 text-sm font-medium text-blue-400 transition-all duration-300 border rounded-lg bg-blue-500/20 border-blue-500/30 hover:bg-blue-500/30">
                   View Detailed Reports
                 </button>
               </motion.div>

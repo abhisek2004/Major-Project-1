@@ -151,7 +151,7 @@ const ApproveJobs = () => {
     //   salary: '₹8,500/month',
     //   department: 'Computer Science',
     //   university: 'Caltech',
-    //   submittedBy: 'Emily Johnson',
+    //   submittedBy: 'Ananya Das',
     //   submittedAt: '2024-01-11T11:30:00Z',
     //   deadline: '2024-01-26T23:59:59Z',
     //   status: 'under_review',

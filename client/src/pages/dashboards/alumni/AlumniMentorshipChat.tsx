@@ -50,48 +50,7 @@ const AlumniMentorshipChat = () => {
             progress: 75,
             sessions: 12
         },
-        {
-            id: 2,
-            name: 'Jane Doe',
-            university: 'MIT',
-            major: 'Product Design',
-            avatar: 'https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop&crop=face',
-            lastMessage: 'Can we schedule a call to discuss my portfolio?',
-            lastMessageTime: '1 hour ago',
-            unreadCount: 0,
-            isOnline: false,
-            interests: ['Product Management', 'UX/UI', 'Startup Ideas'],
-            progress: 60,
-            sessions: 8
-        },
-        {
-            id: 3,
-            name: 'John Smith',
-            university: 'Harvard',
-            major: 'Data Science',
-            avatar: 'https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop&crop=face',
-            lastMessage: 'Thanks for the resources! Preparing for interviews.',
-            lastMessageTime: '2 days ago',
-            unreadCount: 1,
-            isOnline: true,
-            interests: ['Machine Learning', 'Analytics', 'Big Data'],
-            progress: 85,
-            sessions: 15
-        },
-        {
-            id: 4,
-            name: 'Emily Johnson',
-            university: 'Berkeley',
-            major: 'Mobile Development',
-            avatar: 'https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop&crop=face',
-            lastMessage: 'The SwiftUI tutorial was helpful. Building my app now.',
-            lastMessageTime: '3 days ago',
-            unreadCount: 0,
-            isOnline: false,
-            interests: ['iOS Development', 'App Design', 'Swift'],
-            progress: 50,
-            sessions: 6
-        }
+        
     ];
 
     const messages = [

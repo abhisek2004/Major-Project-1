@@ -107,7 +107,7 @@ const ManageAdmins = () => {
     // },
     // {
     //   id: 5,
-    //   name: 'Emily Johnson',
+    //   name: 'Ananya Das',
     //   email: 'emily.johnson@caltech.edu',
     //   phone: '+1 (555) 567-8901',
     //   university: 'Caltech',

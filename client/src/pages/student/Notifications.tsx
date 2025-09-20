@@ -53,7 +53,7 @@ const Notifications = () => {
       id: 2,
       type: 'interview_scheduled',
       title: 'Interview Scheduled',
-      message: 'Technical interview scheduled for Sept 20, 2025 at 2:00 PM with Sarah Chen from Google.',
+      message: 'Technical interview scheduled for Sept 20, 2025 at 2:00 PM with Ritu Verma from Google.',
       timestamp: '2025-01-15T09:15:00Z',
       isRead: false,
       priority: 'urgent',
@@ -65,12 +65,12 @@ const Notifications = () => {
       id: 3,
       type: 'mentor_message',
       title: 'New Message from Mentor',
-      message: 'Michael Rodriguez sent you a message about product management career paths.',
+      message: 'Prakash Reddy sent you a message about product management career paths.',
       timestamp: '2025-01-15T08:45:00Z',
       isRead: true,
       priority: 'medium',
       actionUrl: '/student/mentorship',
-      mentorName: 'Michael Rodriguez',
+      mentorName: 'Prakash Reddy',
       mentorCompany: 'Meta'
     },
     {

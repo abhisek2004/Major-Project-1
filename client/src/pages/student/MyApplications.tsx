@@ -52,7 +52,7 @@ const MyApplications = () => {
       progress: 75,
       interviewDate: '2025-01-20',
       interviewTime: '2:00 PM',
-      interviewer: 'Sarah Chen - Senior SWE'
+      interviewer: 'Ritu Verma - Senior SWE'
     },
     {
       id: 2,

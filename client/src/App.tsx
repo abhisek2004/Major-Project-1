@@ -53,7 +53,7 @@ function App() {
           <Route path="/student/notifications" element={<StudentNotifications />} />
           <Route path="/student/settings" element={<StudentSettings />} />
           <Route path="/hr" element={<HRDashboard />} />
-          <Route path="/alumni/mentorship" element={<AlumniMentorshipChat />} />
+          <Route path="/alumni/chat" element={<AlumniMentorshipChat />} />
         </Routes>
       </div>
     </Router>

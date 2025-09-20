@@ -23,6 +23,22 @@ const Login = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
+    switch (selectedRole) {
+      case 'hr':
+        navigate('/hr');
+        break;
+      case 'hod':
+        navigate('/hod');
+        break;
+      case 'admin':
+        navigate('/admin');
+        break;
+      case 'super-admin':
+        navigate('/super-admin');
+        break;
+      default:
+        setError('Please select a valid role');
+    }
 
     try {
       console.log("selectedRoles", selectedRole)
@@ -44,8 +60,8 @@ const Login = () => {
       console.error('Login error:', error);
     }
   };
-  
-    return (
+
+  return (
     <div className="flex items-center justify-center min-h-screen p-4 bg-slate-950">
       <div className="absolute inset-0">
         <div className="absolute rounded-full top-20 left-10 w-96 h-96 bg-blue-500/5 blur-3xl animate-pulse"></div>
@@ -87,8 +103,8 @@ const Login = () => {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setSelectedRole(role.id)}
                   className={`p-3 rounded-xl border transition-all duration-300 text-left ${selectedRole === role.id
-                      ? 'border-blue-500 bg-blue-500/10 text-blue-400'
-                      : 'border-slate-700 bg-slate-800/30 text-slate-400 hover:border-slate-600'
+                    ? 'border-blue-500 bg-blue-500/10 text-blue-400'
+                    : 'border-slate-700 bg-slate-800/30 text-slate-400 hover:border-slate-600'
                     }`}
                 >
                   <div className="flex items-center space-x-2">

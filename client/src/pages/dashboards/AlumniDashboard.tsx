@@ -76,7 +76,7 @@ const AlumniDashboard = () => {
       avatar: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop&crop=face'
     },
     {
-      name: 'David Chen',
+      name: 'David',
       department: 'Data Science',
       year: '2025',
       request: 'Need advice on building a data science portfolio and preparing for technical interviews at FAANG companies.',
@@ -219,11 +219,11 @@ const AlumniDashboard = () => {
       <DashboardSidebar
         items={sidebarItems}
         userRole="alumni"
-        userName="Michael Rodriguez"
+        userName="Debabrata"
         userAvatar="https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face"
       />
 
-      <div className="overflow-auto flex-1">
+      <div className="flex-1 overflow-auto">
         <div className="p-8">
           {/* Header */}
           <motion.div
@@ -232,7 +232,7 @@ const AlumniDashboard = () => {
             transition={{ duration: 0.6 }}
             className="mb-8"
           >
-            <h1 className="mb-2 text-3xl font-bold text-white">Welcome back, Michael! 🌟</h1>
+            <h1 className="mb-2 text-3xl font-bold text-white">Welcome back, Debabrata! 🌟</h1>
             <p className="text-slate-400">Continue making a difference in students' careers</p>
           </motion.div>
 
@@ -252,17 +252,17 @@ const AlumniDashboard = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
-                className="p-6 mb-8 rounded-2xl border backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
+                className="p-6 mb-8 border rounded-2xl backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
               >
-                <div className="flex justify-between items-center mb-6">
+                <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-semibold text-white">Mentorship Requests</h3>
                   <div className="flex items-center space-x-3">
                     <div className="relative">
-                      <Search className="absolute left-3 top-1/2 w-4 h-4 transform -translate-y-1/2 text-slate-400" />
+                      <Search className="absolute w-4 h-4 transform -translate-y-1/2 left-3 top-1/2 text-slate-400" />
                       <input
                         type="text"
                         placeholder="Search students..."
-                        className="py-2 pr-4 pl-10 text-sm text-white rounded-lg border bg-slate-800/50 border-slate-700/50 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
+                        className="py-2 pl-10 pr-4 text-sm text-white border rounded-lg bg-slate-800/50 border-slate-700/50 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500/50"
                       />
                     </div>
                     <button className="text-sm font-medium text-blue-400 transition-colors hover:text-blue-300">
@@ -273,7 +273,7 @@ const AlumniDashboard = () => {
 
                 <div className="space-y-6">
                   {mentorshipRequests.map((request, index) => (
-                    <div key={index} className="p-5 rounded-xl border bg-slate-800/30 border-slate-700/30">
+                    <div key={index} className="p-5 border rounded-xl bg-slate-800/30 border-slate-700/30">
                       <div className="flex items-start space-x-4">
                         <img
                           src={request.avatar}
@@ -281,7 +281,7 @@ const AlumniDashboard = () => {
                           className="w-12 h-12 rounded-full"
                         />
                         <div className="flex-1">
-                          <div className="flex justify-between items-start mb-3">
+                          <div className="flex items-start justify-between mb-3">
                             <div>
                               <h4 className="font-semibold text-white">{request.name}</h4>
                               <p className="text-sm text-slate-400">{request.department} • Class of {request.year}</p>
@@ -291,7 +291,7 @@ const AlumniDashboard = () => {
 
                           <p className="mb-4 text-sm leading-relaxed text-slate-300">{request.request}</p>
 
-                          <div className="flex justify-between items-center">
+                          <div className="flex items-center justify-between">
                             <div className="flex flex-wrap gap-2">
                               {request.skills.map((skill) => (
                                 <span key={skill} className="px-2 py-1 text-xs font-medium text-blue-400 rounded-lg bg-blue-500/20">
@@ -301,10 +301,10 @@ const AlumniDashboard = () => {
                             </div>
 
                             <div className="flex space-x-2">
-                              <button className="px-4 py-2 text-sm font-medium text-green-400 rounded-lg border transition-all duration-300 bg-green-500/20 border-green-500/30 hover:bg-green-500/30">
+                              <button className="px-4 py-2 text-sm font-medium text-green-400 transition-all duration-300 border rounded-lg bg-green-500/20 border-green-500/30 hover:bg-green-500/30">
                                 Accept
                               </button>
-                              <button className="px-4 py-2 text-sm font-medium rounded-lg border transition-all duration-300 bg-slate-700/50 border-slate-600/50 text-slate-400 hover:bg-slate-600/50">
+                              <button className="px-4 py-2 text-sm font-medium transition-all duration-300 border rounded-lg bg-slate-700/50 border-slate-600/50 text-slate-400 hover:bg-slate-600/50">
                                 Decline
                               </button>
                             </div>
@@ -321,17 +321,17 @@ const AlumniDashboard = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="p-6 mb-8 rounded-2xl border backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
+                className="p-6 mb-8 border rounded-2xl backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
               >
-                <div className="flex justify-between items-center mb-6">
+                <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-semibold text-white">Share Resources</h3>
-                  <button className="px-4 py-2 text-sm font-medium text-blue-400 rounded-lg border transition-all duration-300 bg-blue-500/20 border-blue-500/30 hover:bg-blue-500/30">
+                  <button className="px-4 py-2 text-sm font-medium text-blue-400 transition-all duration-300 border rounded-lg bg-blue-500/20 border-blue-500/30 hover:bg-blue-500/30">
                     + Add New Resource
                   </button>
                 </div>
 
                 <div className="grid grid-cols-1 gap-4 mb-6 md:grid-cols-2">
-                  <div className="p-4 rounded-xl border bg-slate-800/30 border-slate-700/30">
+                  <div className="p-4 border rounded-xl bg-slate-800/30 border-slate-700/30">
                     <div className="flex items-center mb-3 space-x-3">
                       <FileText className="w-8 h-8 text-blue-400" />
                       <div>
@@ -339,12 +339,12 @@ const AlumniDashboard = () => {
                         <p className="text-sm text-slate-400">Share PDFs, docs, presentations</p>
                       </div>
                     </div>
-                    <button className="px-4 py-2 w-full text-sm font-medium text-blue-400 rounded-lg border transition-all duration-300 bg-blue-500/20 border-blue-500/30 hover:bg-blue-500/30">
+                    <button className="w-full px-4 py-2 text-sm font-medium text-blue-400 transition-all duration-300 border rounded-lg bg-blue-500/20 border-blue-500/30 hover:bg-blue-500/30">
                       Choose File
                     </button>
                   </div>
 
-                  <div className="p-4 rounded-xl border bg-slate-800/30 border-slate-700/30">
+                  <div className="p-4 border rounded-xl bg-slate-800/30 border-slate-700/30">
                     <div className="flex items-center mb-3 space-x-3">
                       <Share2 className="w-8 h-8 text-green-400" />
                       <div>
@@ -355,7 +355,7 @@ const AlumniDashboard = () => {
                     <input
                       type="url"
                       placeholder="https://..."
-                      className="px-3 py-2 w-full text-sm text-white rounded-lg border bg-slate-800/50 border-slate-700/50 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-green-500/50"
+                      className="w-full px-3 py-2 text-sm text-white border rounded-lg bg-slate-800/50 border-slate-700/50 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-green-500/50"
                     />
                   </div>
                 </div>
@@ -363,7 +363,7 @@ const AlumniDashboard = () => {
                 <div className="space-y-4">
                   <h4 className="mb-3 font-medium text-white">Recently Shared Resources</h4>
                   {sharedResources.map((resource, index) => (
-                    <div key={index} className="flex justify-between items-center p-4 rounded-xl bg-slate-800/30">
+                    <div key={index} className="flex items-center justify-between p-4 rounded-xl bg-slate-800/30">
                       <div className="flex items-center space-x-3">
                         <resource.icon className="w-6 h-6 text-blue-400" />
                         <div>
@@ -388,19 +388,19 @@ const AlumniDashboard = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.8 }}
-                className="p-6 rounded-2xl border backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
+                className="p-6 border rounded-2xl backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
               >
-                <div className="flex justify-between items-center mb-6">
+                <div className="flex items-center justify-between mb-6">
                   <h3 className="text-xl font-semibold text-white">Career Tips & Insights</h3>
-                  <button className="px-4 py-2 text-sm font-medium text-purple-400 rounded-lg border transition-all duration-300 bg-purple-500/20 border-purple-500/30 hover:bg-purple-500/30">
+                  <button className="px-4 py-2 text-sm font-medium text-purple-400 transition-all duration-300 border rounded-lg bg-purple-500/20 border-purple-500/30 hover:bg-purple-500/30">
                     + Write New Tip
                   </button>
                 </div>
 
                 <div className="space-y-4">
                   {careerTips.map((tip, index) => (
-                    <div key={index} className="p-4 rounded-xl border bg-slate-800/30 border-slate-700/30">
-                      <div className="flex justify-between items-start mb-3">
+                    <div key={index} className="p-4 border rounded-xl bg-slate-800/30 border-slate-700/30">
+                      <div className="flex items-start justify-between mb-3">
                         <div>
                           <h4 className="mb-2 font-medium text-white">{tip.title}</h4>
                           <p className="mb-3 text-sm text-slate-300">{tip.excerpt}</p>
@@ -430,9 +430,9 @@ const AlumniDashboard = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.0 }}
-                className="p-6 mb-6 rounded-2xl border backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
+                className="p-6 mb-6 border rounded-2xl backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
               >
-                <div className="flex justify-between items-center mb-4">
+                <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-semibold text-white">Chat with Students</h3>
                   <button className="text-sm font-medium text-blue-400 transition-colors hover:text-blue-300">
                     View All
@@ -441,7 +441,7 @@ const AlumniDashboard = () => {
 
                 <div className="space-y-4">
                   {activeChats.map((chat, index) => (
-                    <div key={index} className="flex p-3 space-x-3 rounded-lg transition-all duration-300 cursor-pointer bg-slate-800/30 hover:bg-slate-800/50">
+                    <div key={index} className="flex p-3 space-x-3 transition-all duration-300 rounded-lg cursor-pointer bg-slate-800/30 hover:bg-slate-800/50">
                       <div className="relative">
                         <img
                           src={chat.avatar}
@@ -449,21 +449,21 @@ const AlumniDashboard = () => {
                           className="w-10 h-10 rounded-full"
                         />
                         {chat.unread > 0 && (
-                          <div className="flex absolute -top-1 -right-1 justify-center items-center w-5 h-5 bg-blue-500 rounded-full">
+                          <div className="absolute flex items-center justify-center w-5 h-5 bg-blue-500 rounded-full -top-1 -right-1">
                             <span className="text-xs font-bold text-white">{chat.unread}</span>
                           </div>
                         )}
                       </div>
                       <div className="flex-1 min-w-0">
-                        <div className="flex justify-between items-center mb-1">
+                        <div className="flex items-center justify-between mb-1">
                           <h4 className="text-sm font-medium text-white truncate">{chat.name}</h4>
                           <span className="text-xs text-slate-400">{chat.time}</span>
                         </div>
                         <p className="mb-1 text-xs truncate text-slate-300">{chat.lastMessage}</p>
                         <span className={`text-xs px-2 py-1 rounded-full ${chat.status === 'preparing for interview' ? 'bg-yellow-500/20 text-yellow-400' :
-                            chat.status === 'job searching' ? 'bg-blue-500/20 text-blue-400' :
-                              chat.status === 'networking' ? 'bg-purple-500/20 text-purple-400' :
-                                'bg-green-500/20 text-green-400'
+                          chat.status === 'job searching' ? 'bg-blue-500/20 text-blue-400' :
+                            chat.status === 'networking' ? 'bg-purple-500/20 text-purple-400' :
+                              'bg-green-500/20 text-green-400'
                           }`}>
                           {chat.status}
                         </span>
@@ -478,9 +478,9 @@ const AlumniDashboard = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.2 }}
-                className="p-6 mb-6 rounded-2xl border backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
+                className="p-6 mb-6 border rounded-2xl backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
               >
-                <div className="flex justify-between items-center mb-4">
+                <div className="flex items-center justify-between mb-4">
                   <h3 className="text-lg font-semibold text-white">Student Achievements</h3>
                   <button className="text-sm font-medium text-blue-400 transition-colors hover:text-blue-300">
                     View All
@@ -491,9 +491,9 @@ const AlumniDashboard = () => {
                   {recentAchievements.map((achievement, index) => (
                     <div key={index} className="flex items-start p-4 space-x-4 rounded-xl bg-slate-800/30">
                       <div className={`p-2 rounded-lg ${achievement.type === 'job_offer' ? 'bg-green-500/20' :
-                          achievement.type === 'completion' ? 'bg-blue-500/20' :
-                            achievement.type === 'skill_improvement' ? 'bg-purple-500/20' :
-                              'bg-orange-500/20'
+                        achievement.type === 'completion' ? 'bg-blue-500/20' :
+                          achievement.type === 'skill_improvement' ? 'bg-purple-500/20' :
+                            'bg-orange-500/20'
                         }`}>
                         {achievement.type === 'job_offer' && <CheckCircle className="w-4 h-4 text-green-400" />}
                         {achievement.type === 'completion' && <Award className="w-4 h-4 text-blue-400" />}
@@ -515,13 +515,13 @@ const AlumniDashboard = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 1.4 }}
-                className="p-6 rounded-2xl border backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
+                className="p-6 border rounded-2xl backdrop-blur-xl bg-slate-900/50 border-slate-700/50"
               >
                 <h3 className="mb-4 text-lg font-semibold text-white">Your Impact</h3>
 
                 <div className="space-y-4">
                   <div className="text-center">
-                    <div className="flex justify-center items-center mx-auto mb-3 w-20 h-20 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full">
+                    <div className="flex items-center justify-center w-20 h-20 mx-auto mb-3 rounded-full bg-gradient-to-br from-blue-500 to-purple-500">
                       <Heart className="w-8 h-8 text-white" />
                     </div>
                     <p className="mb-1 text-2xl font-bold text-white">47</p>
@@ -540,16 +540,16 @@ const AlumniDashboard = () => {
                   </div>
 
                   <div className="pt-4 border-t border-slate-700/50">
-                    <div className="flex justify-between items-center mb-2">
+                    <div className="flex items-center justify-between mb-2">
                       <span className="text-sm text-slate-400">Response Rate</span>
                       <span className="font-medium text-white">96%</span>
                     </div>
                     <div className="w-full h-2 rounded-full bg-slate-700">
-                      <div className="h-2 bg-gradient-to-r from-green-500 to-emerald-500 rounded-full" style={{ width: '96%' }}></div>
+                      <div className="h-2 rounded-full bg-gradient-to-r from-green-500 to-emerald-500" style={{ width: '96%' }}></div>
                     </div>
                   </div>
 
-                  <button className="px-4 py-2 w-full text-sm font-medium text-blue-400 bg-gradient-to-r rounded-lg border transition-all duration-300 from-blue-500/20 to-purple-500/20 border-blue-500/30 hover:bg-gradient-to-r hover:from-blue-500/30 hover:to-purple-500/30">
+                  <button className="w-full px-4 py-2 text-sm font-medium text-blue-400 transition-all duration-300 border rounded-lg bg-gradient-to-r from-blue-500/20 to-purple-500/20 border-blue-500/30 hover:bg-gradient-to-r hover:from-blue-500/30 hover:to-purple-500/30">
                     Share Your Story
                   </button>
                 </div>

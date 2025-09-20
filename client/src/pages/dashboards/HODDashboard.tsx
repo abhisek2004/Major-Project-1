@@ -202,7 +202,7 @@ const HODDashboard = () => {
       time: '10:00 AM',
       type: 'Technical',
       mode: 'Online',
-      interviewer: 'Sarah Chen (HOD)',
+      interviewer: 'Ritu Verma (HOD)',
       status: 'confirmed'
     },
     {
@@ -271,7 +271,7 @@ const HODDashboard = () => {
       <DashboardSidebar
         items={sidebarItems}
         userRole="hod"
-        userName="Dr. Sarah Chen"
+        userName="Dr. Ritu Verma"
         userAvatar="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop&crop=face"
       />
 
@@ -354,11 +354,10 @@ const HODDashboard = () => {
                             <div>
                               <div className="flex items-center mb-2 space-x-3">
                                 <h4 className="text-lg font-semibold text-white">{job.position}</h4>
-                                <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                                  job.priority === 'urgent' ? 'bg-red-500/20 text-red-400' :
+                                <span className={`px-3 py-1 rounded-full text-xs font-medium ${job.priority === 'urgent' ? 'bg-red-500/20 text-red-400' :
                                   job.priority === 'high' ? 'bg-orange-500/20 text-orange-400' :
-                                  'bg-blue-500/20 text-blue-400'
-                                }`}>
+                                    'bg-blue-500/20 text-blue-400'
+                                  }`}>
                                   {job.priority}
                                 </span>
                                 <span className="px-3 py-1 text-xs font-medium text-green-400 rounded-full bg-green-500/20">
@@ -393,9 +392,8 @@ const HODDashboard = () => {
                           </div>
 
                           <div className="flex justify-between items-center">
-                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                              job.type === 'Internship' ? 'bg-blue-500/20 text-blue-400' : 'bg-purple-500/20 text-purple-400'
-                            }`}>
+                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${job.type === 'Internship' ? 'bg-blue-500/20 text-blue-400' : 'bg-purple-500/20 text-purple-400'
+                              }`}>
                               {job.type}
                             </span>
 
@@ -455,9 +453,8 @@ const HODDashboard = () => {
                               <h4 className="font-semibold text-white">{student.name}</h4>
                               <p className="text-sm text-slate-400">{student.rollNo} • CGPA: {student.cgpa}</p>
                             </div>
-                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                              student.status === 'shortlisted' ? 'bg-green-500/20 text-green-400' : 'bg-yellow-500/20 text-yellow-400'
-                            }`}>
+                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${student.status === 'shortlisted' ? 'bg-green-500/20 text-green-400' : 'bg-yellow-500/20 text-yellow-400'
+                              }`}>
                               {student.status.replace('_', ' ')}
                             </span>
                           </div>
@@ -513,15 +510,14 @@ const HODDashboard = () => {
                           <p className="text-sm text-slate-400">CGPA: {application.cgpa}</p>
                         </div>
                         <div className="text-right">
-                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                            application.priority === 'high' ? 'bg-red-500/20 text-red-400' : 'bg-orange-500/20 text-orange-400'
-                          }`}>
+                          <span className={`px-3 py-1 rounded-full text-xs font-medium ${application.priority === 'high' ? 'bg-red-500/20 text-red-400' : 'bg-orange-500/20 text-orange-400'
+                            }`}>
                             {application.priority} priority
                           </span>
                           <p className="mt-1 text-xs text-slate-400">{application.submittedAt}</p>
                         </div>
                       </div>
-                      
+
                       <div className="flex flex-wrap gap-2 mb-3">
                         {application.skills.map((skill) => (
                           <span key={skill} className="px-2 py-1 text-xs font-medium text-blue-400 rounded-lg bg-blue-500/20">
@@ -578,9 +574,8 @@ const HODDashboard = () => {
                           <p className="text-sm text-slate-400">{interview.position}</p>
                           <p className="text-sm text-slate-400">{interview.company}</p>
                         </div>
-                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${
-                          interview.status === 'confirmed' ? 'bg-green-500/20 text-green-400' : 'bg-yellow-500/20 text-yellow-400'
-                        }`}>
+                        <span className={`px-2 py-1 rounded-full text-xs font-medium ${interview.status === 'confirmed' ? 'bg-green-500/20 text-green-400' : 'bg-yellow-500/20 text-yellow-400'
+                          }`}>
                           {interview.status}
                         </span>
                       </div>
@@ -655,13 +650,12 @@ const HODDashboard = () => {
                 <div className="space-y-4">
                   {recentActivity.map((activity, index) => (
                     <div key={index} className="flex items-start space-x-3">
-                      <div className={`p-2 rounded-lg ${
-                        activity.type === 'job_post' ? 'bg-blue-500/20' :
+                      <div className={`p-2 rounded-lg ${activity.type === 'job_post' ? 'bg-blue-500/20' :
                         activity.type === 'shortlist' ? 'bg-green-500/20' :
-                        activity.type === 'interview' ? 'bg-purple-500/20' :
-                        activity.type === 'review' ? 'bg-orange-500/20' :
-                        'bg-slate-700/30'
-                      }`}>
+                          activity.type === 'interview' ? 'bg-purple-500/20' :
+                            activity.type === 'review' ? 'bg-orange-500/20' :
+                              'bg-slate-700/30'
+                        }`}>
                         {activity.type === 'job_post' && <Plus className="w-4 h-4 text-blue-400" />}
                         {activity.type === 'shortlist' && <UserCheck className="w-4 h-4 text-green-400" />}
                         {activity.type === 'interview' && <Calendar className="w-4 h-4 text-purple-400" />}

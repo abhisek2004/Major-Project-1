@@ -79,27 +79,13 @@ const MentorshipChat = () => {
       rating: 4.9,
       sessions: 28
     },
-    {
-      id: 4,
-      name: 'Rajat',
-      company: 'Apple',
-      role: 'iOS Developer',
-      avatar: 'https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=50&h=50&fit=crop&crop=face',
-      lastMessage: 'The SwiftUI tutorial I sent should help with your app development.',
-      lastMessageTime: '3 days ago',
-      unreadCount: 0,
-      isOnline: false,
-      expertise: ['iOS Development', 'Swift', 'Mobile Apps'],
-      rating: 4.7,
-      sessions: 19
-    }
   ];
 
   const messages = [
     {
       id: 1,
       senderId: 1,
-      senderName: 'Sarah Chen',
+      senderName: 'Ritu Verma',
       content: 'Hi Abhisek How are you doing with your algorithm practice?',
       timestamp: '2024-01-15T10:00:00Z',
       isFromMentor: true
@@ -115,7 +101,7 @@ const MentorshipChat = () => {
     {
       id: 3,
       senderId: 1,
-      senderName: 'Sarah Chen',
+      senderName: 'Ritu Verma',
       content: 'That\'s completely normal! DP can be tricky at first. Have you tried the classic problems like Fibonacci and Coin Change?',
       timestamp: '2024-01-15T10:07:00Z',
       isFromMentor: true
@@ -131,7 +117,7 @@ const MentorshipChat = () => {
     {
       id: 5,
       senderId: 1,
-      senderName: 'Sarah Chen',
+      senderName: 'Ritu Verma',
       content: 'Sure! Think about it this way: for each coin, you have two choices - include it or exclude it. Try to build a table where dp[i] represents the minimum coins needed to make amount i.',
       timestamp: '2024-01-15T10:15:00Z',
       isFromMentor: true
@@ -139,7 +125,7 @@ const MentorshipChat = () => {
     {
       id: 6,
       senderId: 1,
-      senderName: 'Sarah Chen',
+      senderName: 'Ritu Verma',
       content: 'Also, I\'m attaching a great resource that explains DP patterns step by step. It really helped me when I was learning.',
       timestamp: '2024-01-15T10:16:00Z',
       isFromMentor: true,
@@ -160,7 +146,7 @@ const MentorshipChat = () => {
     {
       id: 8,
       senderId: 1,
-      senderName: 'Sarah Chen',
+      senderName: 'Ritu Verma',
       content: 'Great progress on your coding skills! Keep practicing those algorithms.',
       timestamp: '2024-01-15T14:30:00Z',
       isFromMentor: true
