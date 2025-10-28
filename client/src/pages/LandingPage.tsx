@@ -59,9 +59,9 @@ const LandingPage = () => {
   ];
 
   const stats = [
-    { number: '5K+', label: 'Active Students', icon: GraduationCap },
-    { number: '1K+', label: 'Alumni Mentors', icon: Users },
-    { number: '1K+', label: 'Job Placements', icon: Briefcase },
+    { number: '5+', label: 'Active Students', icon: GraduationCap },
+    { number: '1+', label: 'Alumni Mentors', icon: Users },
+    { number: '1+', label: 'Job Placements', icon: Briefcase },
     { number: '95%', label: 'Success Rate', icon: Star }
   ];
 
