@@ -161,6 +161,49 @@ The platform uses **MongoDB Atlas**, a secure cloud-hosted NoSQL database.
 
 ---
 
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+
+---
+
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+
+![FlowChart](https://github.com/user-attachments/assets/c5496d36-31a2-4363-9da4-c67194ebd800)
+
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+
+<img width="1280" height="720" alt="er 1" src="https://github.com/user-attachments/assets/3dbc22cb-362b-4842-b7ee-c2730d18792a" />
+
+![ER_page-0001](https://github.com/user-attachments/assets/c903ba58-c484-4f3e-9707-5434212e44b0)
+
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+
+![Structure](https://github.com/user-attachments/assets/404d0aed-004a-400d-8272-78f8c1b20e6e)
+
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+
+![Use Case](https://github.com/user-attachments/assets/73f77f39-be97-442a-8f32-79b3589bdad9)
+
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+
+![Sequence Diagram](https://github.com/user-attachments/assets/98fcbe5e-78c2-48c1-b69b-cbe0468237b4)
+
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+
+<img width="1536" height="1024" alt="DFD Level 0" src="https://github.com/user-attachments/assets/3b402ddf-18e3-4525-a402-1d209ce85784" />
+
+![dfd_page-0001](https://github.com/user-attachments/assets/e007c880-f594-42c6-915c-30a7377d9e7e)
+
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+
+![Activity Diagram](https://github.com/user-attachments/assets/669f2e6d-cf6e-40f2-bdd7-8685dc406fc7)
+
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+
+![Class Diagram](https://github.com/user-attachments/assets/49237b08-b764-4418-8066-78bf37870b4c)
+
+
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+
 ## **📌 Future Enhancements**
 
 * **AI Chatbot Integration** (Dialogflow / OpenAI API) for career guidance.
