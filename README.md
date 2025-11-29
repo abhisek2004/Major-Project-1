@@ -1,6 +1,14 @@
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+
 # Major-Project-1
 
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+
 # **FutureMesh – Enhancing Employability Through Mentorship and Smart Job Matching**
+
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## **📖 Project Overview**
 
@@ -196,6 +204,29 @@ The platform uses **MongoDB Atlas**, a secure cloud-hosted NoSQL database.
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ---
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
+
+<img width="2540" height="1336" alt="localhost_5173_" src="https://github.com/user-attachments/assets/037f082a-229f-42ed-8674-1c00ef43a180" />
+
+<img width="2540" height="1336" alt="localhost_5173_ (1)" src="https://github.com/user-attachments/assets/92998c2c-b1eb-4303-a740-7169a50c0e39" />
+
+<img width="2540" height="1336" alt="localhost_5173_student (1)" src="https://github.com/user-attachments/assets/89c7fcb0-a200-47b6-bab9-7c05b8597393" />
+
+<img width="2540" height="1336" alt="localhost_5173_student" src="https://github.com/user-attachments/assets/63d81004-174e-44c2-9f18-899a5a13fe0d" />
+
+<img width="2884" height="1836" alt="localhost_5173_hod_" src="https://github.com/user-attachments/assets/e0de63ca-d36d-4b6b-8877-505e17d21151" />
+
+<img width="2884" height="1836" alt="localhost_5173_hod" src="https://github.com/user-attachments/assets/b787759a-ea0b-473a-8c3d-417b8eaa78a0" />
+
+<img width="2884" height="1836" alt="localhost_5173_hod_ (1)" src="https://github.com/user-attachments/assets/5f20aa4e-b6c0-462e-b894-a9fe53ab2ab2" />
+
+<img width="2884" height="1836" alt="localhost_5173_hod_" src="https://github.com/user-attachments/assets/76c5ad65-c3ab-41e3-accd-ad5abeab79f3" />
+
+<img width="2540" height="1336" alt="localhost_5173_alumni" src="https://github.com/user-attachments/assets/d1e2b94c-c433-43da-ad67-926d1df56724" />
+
+<img width="2448" height="1378" alt="localhost_5173_super-admin" src="https://github.com/user-attachments/assets/ac988922-2150-4de2-a955-e93e6a4558b2" />
+
+<img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
 
 ## **👨‍💻 Team**
 
