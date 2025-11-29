@@ -136,15 +136,6 @@ The platform uses **MongoDB Atlas**, a secure cloud-hosted NoSQL database.
 
 ---
 
-## **📅 Development Progress**
-
-* **Landing Pages** – ✅ Done
-* **Login & Registration** – ✅ Done
-* **Super Admin Dashboard** – 🔄 In-progress
-* **Overall Completion** – \~35%
-
----
-
 ![Slide1](https://github.com/user-attachments/assets/fe7c9e9a-711c-4faf-8a7c-d9d44a4eb8d2)
 ![Slide2](https://github.com/user-attachments/assets/6dd547ed-80e2-4157-9b9e-513257722ec9)
 ![Slide3](https://github.com/user-attachments/assets/b903e2cf-d925-4d3a-9b1d-6e56f9183189)
@@ -203,12 +194,6 @@ The platform uses **MongoDB Atlas**, a secure cloud-hosted NoSQL database.
 
 
 <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="100%">
-
-## **📌 Future Enhancements**
-
-* **AI Chatbot Integration** (Dialogflow / OpenAI API) for career guidance.
-* **Resume Parsing** using Python NLP (spaCy, PyPDF2).
-* **Gamification Features** to boost student engagement.
 
 ---
 
